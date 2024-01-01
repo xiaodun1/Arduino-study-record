@@ -1,0 +1,23 @@
+void Forward(); // 前进
+
+//程序初始化部分：设置电机引脚为输出模式
+void setup() {
+  pinMode( 5 , OUTPUT); //将引脚5设置为输出模式
+  pinMode( 6 , OUTPUT); //将引脚6设置为输出模式
+  pinMode( 9 , OUTPUT); //将引脚9设置为输出模式
+  pinMode( 10 , OUTPUT);//将引脚10设置为输出模式
+}
+
+//主程序部分：小车前进
+void loop() {
+  Forward();
+}
+
+//封装小车前进动作子程序
+void Forward() {
+  digitalWrite( 5 , LOW );  //右轮前进
+  digitalWrite( 6 , HIGH );
+  
+  digitalWrite( 9 , LOW );  //左轮前进
+  digitalWrite( 10 , HIGH );
+}
