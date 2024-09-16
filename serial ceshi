@@ -1,0 +1,10 @@
+void setup(){
+  Serial.begin(9600);//串口的波特率
+  Serial.println("Please input serial data.");
+}
+void loop(){
+  if (Serial.available()>0){//检查串口缓存中是否有数据等待传输
+    char serialData = Serial.read();
+    Serial.println(serialData);
+    }
+}
